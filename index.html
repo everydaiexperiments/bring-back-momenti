@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bring Back Momenti - We Want Real Bubbles Back</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --momenti-red: #E30613;
+            --momenti-purple: #C8A5D8;
+            --momenti-lavender: #E8D5F0;
+            --deep-berry: #8B5A9E;
+            --blackcurrant: #4A2C5B;
+            --pomegranate: #D4415C;
+            --soft-pink: #F5E6F0;
+            --dark: #1A1A1A;
+            --off-white: #FFFEF9;
+            --max-width: 1400px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--off-white);
+            color: var(--dark);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating Bubbles Background */
+        .bubbles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: rise 15s infinite ease-in;
+        }
+
+        .bubble:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            left: 10%;
+            background: var(--momenti-purple);
+            animation-delay: 0s;
+            animation-duration: 12s;
+        }
+
+        .bubble:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            left: 30%;
+            background: var(--momenti-lavender);
+            animation-delay: 2s;
+            animation-duration: 15s;
+        }
+
+        .bubble:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            background: var(--deep-berry);
+            animation-delay: 4s;
+            animation-duration: 18s;
+        }
+
+        .bubble:nth-child(4) {
+            width: 70px;
+            height: 70px;
+            left: 70%;
+            background: var(--pomegranate);
+            animation-delay: 1s;
+            animation-duration: 14s;
+        }
+
+        .bubble:nth-child(5) {
+            width: 90px;
+            height: 90px;
+            left: 85%;
+            background: var(--momenti-purple);
+            animation-delay: 3s;
+            animation-duration: 16s;
+        }
+
+        .bubble:nth-child(6) {
+            width: 50px;
+            height: 50px;
+            left: 20%;
+            background: var(--momegranate);
+            animation-delay: 5s;
+            animation-duration: 13s;
+        }
+
+        @keyframes rise {
+            0% {
+                bottom: -100px;
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                bottom: 110%;
+                transform: translateX(-100px);
+            }
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 5%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--deep-berry);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--deep-berry);
+            letter-spacing: -1px;
+        }
+
+        .sign-quick {
+            background: var(--pomegranate);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(212, 65, 92, 0.3);
+        }
+
+        .sign-quick:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(212, 65, 92, 0.4);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 3rem 5% 2rem;
+            text-align: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 7vw, 6.5rem);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -3px;
+        }
+
+        .hero h1 .red {
+            color: var(--pomegranate);
+            display: inline-block;
+            animation: wobble 2s infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes wobble {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            margin-bottom: 0;
+            color: #555;
+            font-weight: 500;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .momento-banner {
+            background: linear-gradient(135deg, var(--deep-berry), var(--pomegranate));
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+            margin: 0 0 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .momento-banner::before {
+            content: '⏰';
+            position: absolute;
+            font-size: 20rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .momento-banner h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            letter-spacing: -2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .momento-banner p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Counter Section */
+        .counter-section {
+            background: linear-gradient(135deg, var(--deep-berry), var(--blackcurrant));
+            padding: 2rem 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .counter-box {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .counter-box h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .count-display {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(4rem, 10vw, 7rem);
+            font-weight: 900;
+            line-height: 1;
+            margin: 1rem 0;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .counter-label {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .momentum {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 5rem 5%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .story-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 2rem;
+            color: var(--pomegranate);
+            font-weight: 900;
+        }
+
+        .story-text {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.5rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .story-text strong {
+            color: var(--pomegranate);
+            font-weight: 700;
+        }
+
+        .story-text em {
+            background: var(--momenti-lavender);
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-style: normal;
+        }
+
+        /* Why It Slapped */
+        .why-section {
+            background: linear-gradient(135deg, var(--momenti-lavender), var(--soft-pink));
+            padding: 5rem 5%;
+        }
+
+        .why-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .why-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 900;
+            color: var(--dark);
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .reasons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .reason-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .reason-card .emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .reason-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .reason-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 5rem 5%;
+            background: var(--dark);
+            color: white;
+        }
+
+        .comparison-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .comparison-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-card {
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .comparison-card.good {
+            background: linear-gradient(135deg, var(--momenti-purple), var(--momenti-lavender));
+            color: var(--dark);
+        }
+
+        .comparison-card.bad {
+            background: linear-gradient(135deg, #8B7BA8, #6B5B7B);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-card.bad::before {
+            content: '❌';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .comparison-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+
+        .comparison-card ul li {
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .comparison-card.good ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .comparison-card.bad ul li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Petition Section */
+        .petition-section {
+            padding: 5rem 5%;
+            background: linear-gradient(180deg, var(--off-white) 0%, var(--soft-pink) 100%);
+        }
+
+        .petition-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .petition-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 2rem;
+            color: var(--deep-berry);
+            font-weight: 900;
+        }
+
+        .petition-section .subhead {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            color: #555;
+        }
+
+        .petition-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(139, 90, 158, 0.2);
+            margin-bottom: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #E5E5E5;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--deep-berry);
+        }
+
+        .big-sign-btn {
+            width: 100%;
+            padding: 1.8rem;
+            background: linear-gradient(135deg, var(--pomegranate), var(--deep-berry));
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            font-family: 'Outfit', sans-serif;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 40px rgba(139, 90, 158, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .big-sign-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 50px rgba(139, 90, 158, 0.4);
+        }
+
+        .success-msg {
+            background: var(--momenti-lavender);
+            color: var(--dark);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-top: 1.5rem;
+            font-weight: 700;
+            display: none;
+            animation: slideIn 0.5s;
+        }
+
+        .success-msg.show {
+            display: block;
+        }
+
+        /* Share Section */
+        .share-section {
+            padding: 5rem 5%;
+            background: var(--dark);
+            color: white;
+        }
+
+        .share-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .share-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 2rem;
+            font-weight: 900;
+        }
+
+        .share-section p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .tweet-box {
+            background: #15202B;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 2px solid #38444D;
+        }
+
+        .tweet-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            color: #E7E9EA;
+        }
+
+        .hashtags {
+            color: #1D9BF0;
+            font-weight: 500;
+        }
+
+        .copy-tweet-btn {
+            background: #1D9BF0;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .copy-tweet-btn:hover {
+            background: #1A8CD8;
+        }
+
+        .copy-tweet-btn.copied {
+            background: var(--momenti-lavender);
+            color: var(--dark);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .share-btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .share-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .share-btn.twitter {
+            background: #1D9BF0;
+            color: white;
+        }
+
+        .share-btn.instagram {
+            background: linear-gradient(45deg, var(--pomegranate), var(--deep-berry), var(--blackcurrant));
+            color: white;
+        }
+
+        .share-btn.facebook {
+            background: #1877F2;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            background: var(--off-white);
+            text-align: center;
+            border-top: 3px solid var(--deep-berry);
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .disclaimer {
+            font-size: 0.9rem;
+            color: #999;
+            max-width: 700px;
+            margin: 2rem auto 0;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header .logo {
+                font-size: 1.2rem;
+            }
+
+            .sign-quick {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .petition-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">🫧 BRING BACK MOMENTI</div>
+            <a href="#petition" class="sign-quick">Sign Now →</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>They Took Our <span class="red">Bubbles.</span> <br>We Want Them Back.</h1>
+        <p class="subtitle">San Pellegrino discontinued Momenti and replaced it with... whatever that fake-sugar nonsense is.</p>
+    </section>
+
+    <div class="momento-banner">
+        <h3>This is the MOMENT(I)</h3>
+        <p>The time is now. The bubbles won't bring themselves back.</p>
+    </div>
+
+    <section class="counter-section">
+        <div class="counter-box">
+            <h2>People Who Miss Real Flavor</h2>
+            <div class="count-display" id="counterDisplay">4,817</div>
+            <div class="counter-label">signatures (and counting)</div>
+            <p class="momentum">✨ Someone just signed 2 minutes ago ✨</p>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <h2>Remember When Sparkling Water Didn't Taste Like a Chemistry Set?</h2>
+        <p class="story-text">
+            Once upon a time, San Pellegrino made <strong>Momenti</strong>—a lightly flavored sparkling water that actually tasted like the fruit on the can. <em>Wild concept, right?</em>
+        </p>
+        <p class="story-text">
+            It was crisp. It was refreshing. It had <strong>real juice</strong> in it. You could drink it without your taste buds filing a complaint.
+        </p>
+        <p class="story-text">
+            Then one day... <strong>poof</strong>. Gone. Discontinued. Replaced by overly-sweet, artificially-flavored drinks that taste like they were designed in a lab by someone who's never actually tasted fruit.
+        </p>
+        <p class="story-text">
+            We didn't ask for this. We didn't want this. And frankly, <strong>we're not okay with this</strong>.
+        </p>
+        <p class="story-text" style="font-size: 1.4rem; font-weight: 700; color: var(--deep-berry); text-align: center; margin-top: 2rem;">
+            But here's the thing: <em style="background: var(--momenti-lavender); padding: 0.3rem 0.8rem; border-radius: 8px; color: var(--dark);">This is the Moment(i)</em>. If we don't speak up now, those bubbles are gone forever.
+        </p>
+    </section>
+
+    <section class="why-section">
+        <div class="why-content">
+            <h2>Why Momenti Absolutely Slapped</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <span class="emoji">🫐</span>
+                    <h3>Real Ingredients</h3>
+                    <p>Actual fruit juice. Not "natural flavors" (whatever those are). You could pronounce everything on the label.</p>
+                </div>
+                <div class="reason-card">
+                    <span class="emoji">✨</span>
+                    <h3>Not Too Sweet</h3>
+                    <p>Lightly flavored. Refreshing. Didn't taste like you were drinking liquid candy. Perfect hydration vibes.</p>
+                </div>
+                <div class="reason-card">
+                    <span class="emoji">🎯</span>
+                    <h3>Hit Different</h3>
+                    <p>That crisp, clean finish. The subtle bubbles. The way it made you feel fancy but not pretentious. Chef's kiss.</p>
+                </div>
+                <div class="reason-card">
+                    <span class="emoji">🌊</span>
+                    <h3>Zero Guilt</h3>
+                    <p>Low cal, no fake sugar, no weird aftertaste. Just sparkling water doing what sparkling water should do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="comparison-content">
+            <h2>What We Had vs. What They Gave Us</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card good">
+                    <h3>MOMENTI ✨</h3>
+                    <ul>
+                        <li>Real fruit juice</li>
+                        <li>Subtle, refreshing flavor</li>
+                        <li>Clean ingredient list</li>
+                        <li>Tasted like actual fruit</li>
+                        <li>Made you feel alive</li>
+                    </ul>
+                </div>
+                <div class="comparison-card bad">
+                    <h3>THE REPLACEMENT 💀</h3>
+                    <ul>
+                        <li>Fake sweeteners</li>
+                        <li>Overly sweet</li>
+                        <li>Chemical aftertaste</li>
+                        <li>Like every other artificially sweetened seltzer</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 1.2rem; margin-top: 2rem; opacity: 0.9;">
+                We're not saying the new stuff is objectively terrible. We're just saying it's not Momenti. And we want Momenti back.
+            </p>
+        </div>
+    </section>
+
+    <section id="petition" class="petition-section">
+        <div class="petition-content">
+            <h2>Seize the Moment(i)</h2>
+            <p class="subhead">San Pellegrino won't listen unless we're LOUD. This is our moment—sign the petition and let's flood their inboxes with bubbly rage.</p>
+            
+            <form class="petition-form" id="petitionForm">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" required placeholder="The hero we need">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="location">City, State (Optional)</label>
+                    <input type="text" id="location" placeholder="Somewhere missing Momenti">
+                </div>
+                <div class="form-group">
+                    <label for="message">Why do YOU want Momenti back? (Optional but encouraged)</label>
+                    <textarea id="message" rows="4" placeholder="Tell us your Momenti story..."></textarea>
+                </div>
+                <button type="submit" class="big-sign-btn">I DEMAND REAL BUBBLES</button>
+                <div class="success-msg" id="successMsg">
+                    🎉 Hell yeah! Your signature has been added. Now share this with everyone you know!
+                </div>
+            </form>
+
+            <p style="font-size: 0.95rem; color: #666;">
+                By signing, you agree to occasional updates about the campaign. We won't spam you. We're not monsters.
+            </p>
+        </div>
+    </section>
+
+    <section class="share-section">
+        <div class="share-content">
+            <h2>Spread the Word 📢</h2>
+            <p>The more people who know, the more pressure we put on San Pellegrino. Share this campaign and make some noise.</p>
+
+            <div class="tweet-box">
+                <div class="tweet-text" id="tweetText">
+                    This is the MOMENT(I). I just signed the petition to bring back San Pellegrino Momenti—real fruit juice > fake sweeteners. Join me! 🫧⏰✨<br><br>
+                    <span class="hashtags">#BringBackMomenti #ThisIsTheMomenti #RealBubblesOnly</span>
+                </div>
+                <button class="copy-tweet-btn" id="copyTweetBtn">Copy Tweet & Post</button>
+            </div>
+
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text=This%20is%20the%20MOMENT(I).%20I%20just%20signed%20the%20petition%20to%20bring%20back%20San%20Pellegrino%20Momenti.%20Real%20fruit%20juice%20%3E%20fake%20sweeteners.%20%23BringBackMomenti%20%23ThisIsTheMomenti%20%23RealBubblesOnly" target="_blank" class="share-btn twitter">
+                    Share on Twitter
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=yoursiteurl.com" target="_blank" class="share-btn facebook">
+                    Share on Facebook
+                </a>
+            </div>
+
+            <p style="margin-top: 3rem; font-size: 1.1rem; opacity: 0.9;">
+                <strong>Hashtags to use:</strong><br>
+                <span class="hashtags">#BringBackMomenti #ThisIsTheMomenti #RealBubblesOnly #MomentiOrNothing</span>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p style="font-size: 1.2rem; font-weight: 700; color: var(--dark);">Made with rage and nostalgia by people who just want good sparkling water 🫧</p>
+        <p style="margin-top: 2rem;">This is a fan-run campaign. We are not affiliated with San Pellegrino or Nestlé Waters.</p>
+        <p class="disclaimer">
+            This website is a grassroots effort by consumers who genuinely miss Momenti. We're not trying to slander anyone—we just want our favorite drink back. Take it as a compliment :) San Pellegrino and all related trademarks belong to their respective owners. Please drink responsibly (it's literally just sparkling water but still).
+        </p>
+    </footer>
+
+    <script>
+        // SheetDB API Configuration
+        const SHEETDB_API = 'https://sheetdb.io/api/v1/9ut0xhctmj8mv';
+        
+        // Counter functionality with live data from Google Sheets
+        const counterDisplay = document.getElementById('counterDisplay');
+        
+        // Function to fetch live count from Google Sheets
+        async function fetchLiveCount() {
+            try {
+                const response = await fetch(SHEETDB_API);
+                const data = await response.json();
+                
+                // Filter out the header row and count actual signatures
+                const signatures = data.filter(row => row.name && row.name !== 'name');
+                const count = signatures.length;
+                
+                // Update display
+                if (count > 0) {
+                    counterDisplay.textContent = count.toLocaleString();
+                }
+            } catch (error) {
+                console.log('Using fallback counter');
+                // Fallback to animated counter if API fails
+                animateCounter();
+            }
+        }
+
+        // Fallback animated counter
+        function animateCounter() {
+            let currentCount = parseInt(counterDisplay.textContent.replace(/,/g, '')) || 4817;
+            currentCount += Math.floor(Math.random() * 3) + 1;
+            counterDisplay.textContent = currentCount.toLocaleString();
+        }
+
+        // Load live count on page load
+        fetchLiveCount();
+        
+        // Refresh count every 30 seconds
+        setInterval(fetchLiveCount, 30000);
+
+        // Petition form submission
+        const petitionForm = document.getElementById('petitionForm');
+        const successMsg = document.getElementById('successMsg');
+
+        petitionForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                timestamp: new Date().toISOString(),
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                location: document.getElementById('location').value || '',
+                message: document.getElementById('message').value || ''
+            };
+            
+            // Show loading state
+            const submitBtn = petitionForm.querySelector('.big-sign-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'SUBMITTING...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Submit to Google Sheets via SheetDB
+                const response = await fetch(SHEETDB_API, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    // Success! Update counter immediately
+                    await fetchLiveCount();
+                    
+                    // Show success message
+                    successMsg.classList.add('show');
+                    
+                    // Reset form
+                    petitionForm.reset();
+                    
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    
+                    // Hide success after 8 seconds
+                    setTimeout(() => {
+                        successMsg.classList.remove('show');
+                    }, 8000);
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                alert('Oops! Something went wrong. Please try again or email us directly.');
+                console.error('Submission error:', error);
+            } finally {
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Copy tweet functionality
+        const copyTweetBtn = document.getElementById('copyTweetBtn');
+        const tweetText = document.getElementById('tweetText');
+
+        copyTweetBtn.addEventListener('click', async () => {
+            const text = "This is the MOMENT(I). I just signed the petition to bring back San Pellegrino Momenti—real fruit juice > fake sweeteners. Join me! 🫧⏰✨\n\n#BringBackMomenti #ThisIsTheMomenti #RealBubblesOnly";
+            
+            try {
+                await navigator.clipboard.writeText(text);
+                copyTweetBtn.textContent = '✓ Copied! Now paste it on Twitter';
+                copyTweetBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyTweetBtn.textContent = 'Copy Tweet & Post';
+                    copyTweetBtn.classList.remove('copied');
+                }, 3000);
+            } catch (err) {
+                alert('Please copy the tweet manually!');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
